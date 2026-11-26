@@ -287,8 +287,8 @@ importers:
         specifier: ^9.3.2
         version: 9.3.2
       ws:
-        specifier: ^8.19.0
-        version: 8.21.0
+        specifier: ^8.23.0
+        version: 8.23.0
       yauzl:
         specifier: ^3.3.1
         version: 3.3.1
@@ -380,8 +380,8 @@ importers:
         specifier: ^2.7.7
         version: 2.7.7
       picomatch:
-        specifier: ^2.3.2
-        version: 2.3.2
+        specifier: ^4.0.7
+        version: 4.0.7
       vscode-languageclient:
         specifier: ^9.0.1
         version: 9.0.1
@@ -408,8 +408,8 @@ importers:
         specifier: 24.x
         version: 24.12.4
       '@types/picomatch':
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^4.0.3
+        version: 4.0.3
       '@types/vscode-notebook-renderer':
         specifier: ^1.72.4
         version: 1.72.4
@@ -429,8 +429,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1
       vscode-languageserver-types:
-        specifier: ^3.17.2
-        version: 3.17.5
+        specifier: ^3.18.5
+        version: 3.18.5
       vscode-markdown-languageservice:
         specifier: 0.5.0
         version: 0.5.0
@@ -454,8 +454,8 @@ importers:
   extensions/mermaid-markdown-features:
     dependencies:
       '@iconify-json/logos':
-        specifier: ^1.2.0
-        version: 1.2.11
+        specifier: ^1.2.20
+        version: 1.2.20
       '@iconify-json/mdi':
         specifier: ^1.2.0
         version: 1.2.3
@@ -707,8 +707,8 @@ packages:
     resolution: {integrity: sha1-Ts7QWXeH9R/bU61RXD1Ho6vJ/jo=}
     engines: {node: '>=16.0.0'}
 
-  '@iconify-json/logos@1.2.11':
-    resolution: {integrity: sha1-W9BHnQvcLkittmSw+rco1OUBPxw=}
+  '@iconify-json/logos@1.2.20':
+    resolution: {integrity: sha512-HDSte2/+sgGNn9i/eYMiIRDbdigWxZe6EFauQGtxfRG/4sUtUBFgLIdxotKQysKNsFJlLYDFzPILOs3mh9viRQ==}
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha1-Xk7p2MiqrQQ4HIzGxu2+MyfwMbU=}
@@ -1143,8 +1143,8 @@ packages:
   '@types/nspell@2.1.6':
     resolution: {integrity: sha1-ouH+U2mSTJIp69lBBSWLMqNCpgA=}
 
-  '@types/picomatch@2.3.0':
-    resolution: {integrity: sha1-ddtedacTxag9W3Z4DD2oSoKAYAM=}
+  '@types/picomatch@4.0.3':
+    resolution: {integrity: sha1-2Su/JBZkeMVFfIu5ukGn9J1V4JQ=}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha1-usywepcLkXB986PoumiWxX6tLRE=}
@@ -2365,8 +2365,8 @@ packages:
     resolution: {integrity: sha1-WpQpFeJrNy3A8OZ1MUmhbmscVgE=}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.5:
-    resolution: {integrity: sha1-UepXoX2G9gX4EDlZX7xA7QalX6s=}
+  picomatch@4.0.7:
+    resolution: {integrity: sha1-YxM2ADTMs2s9xh7L3/eBIfkP4h8=}
     engines: {node: '>=12'}
 
   pkg-types@1.3.1:
@@ -2665,6 +2665,9 @@ packages:
   vscode-languageserver-types@3.17.5:
     resolution: {integrity: sha1-MnNnbwzy6rQLP0TQhay7fwijnYo=}
 
+  vscode-languageserver-types@3.18.5:
+    resolution: {integrity: sha512-kPd6+JQNz3HMJvjKlqUxERSlZHAntl/aGpsk7ImwIh0ewDKDcjgAEyVSYciPiOJD3ftbK9IrfiqUeTZLSbCizw==}
+
   vscode-languageserver@9.0.1:
     resolution: {integrity: sha1-UArvggl+uU35DQCGeLC2tfR0AVs=}
     hasBin: true
@@ -2722,32 +2725,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.21.0:
-    resolution: {integrity: sha1-AS5BP8B0KZRRIbDBUxWMQ0MIaVE=}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
-  ws@8.21.3:
-    resolution: {integrity: sha1-ZgtPrdtqPldchuB4EmkZlh9N5Pw=}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
-  ws@8.22.0:
-    resolution: {integrity: sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==}
+  ws@8.23.0:
+    resolution: {integrity: sha512-wCkmX8QMOrKjgO8HW2WyDbTSGeqkocxgDzS9iR79rEAexty6/2qzilx3Ag8Tqf9ykop3irLKle0MtVn5qjVnoQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -2942,7 +2921,7 @@ snapshots:
     dependencies:
       '@hpke/common': 1.10.1
 
-  '@iconify-json/logos@1.2.11':
+  '@iconify-json/logos@1.2.20':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -3206,7 +3185,7 @@ snapshots:
       detect-libc: 2.1.2
       is-glob: 4.0.3
       node-addon-api: 7.1.1
-      picomatch: 4.0.5
+      picomatch: 4.0.7
     optionalDependencies:
       '@parcel/watcher-android-arm64': 2.5.6
       '@parcel/watcher-darwin-arm64': 2.5.6
@@ -3416,7 +3395,7 @@ snapshots:
     dependencies:
       '@types/node': 24.12.4
 
-  '@types/picomatch@2.3.0': {}
+  '@types/picomatch@4.0.3': {}
 
   '@types/trusted-types@2.0.7':
     optional: true
@@ -3465,7 +3444,7 @@ snapshots:
   '@vscode/hubrpc@0.0.2-20(zod@4.6.7)':
     dependencies:
       '@hpke/core': 1.9.0
-      ws: 8.21.3
+      ws: 8.23.0
       zod: 4.6.7
     transitivePeerDependencies:
       - bufferutil
@@ -3474,7 +3453,7 @@ snapshots:
   '@vscode/hubrpc@0.0.2-54':
     dependencies:
       '@hpke/core': 1.9.0
-      ws: 8.22.0
+      ws: 8.23.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -3482,7 +3461,7 @@ snapshots:
   '@vscode/hubrpc@0.0.2-54(zod@4.6.7)':
     dependencies:
       '@hpke/core': 1.9.0
-      ws: 8.22.0
+      ws: 8.23.0
       zod: 4.6.7
     transitivePeerDependencies:
       - bufferutil
@@ -4236,9 +4215,9 @@ snapshots:
     dependencies:
       format: 0.2.2
 
-  fdir@6.5.0(picomatch@4.0.5):
+  fdir@6.5.0(picomatch@4.0.7):
     optionalDependencies:
-      picomatch: 4.0.5
+      picomatch: 4.0.7
 
   file-uri-to-path@1.0.0: {}
 
@@ -4832,7 +4811,7 @@ snapshots:
 
   picomatch@2.3.2: {}
 
-  picomatch@4.0.5: {}
+  picomatch@4.0.7: {}
 
   pkg-types@1.3.1:
     dependencies:
@@ -5053,8 +5032,8 @@ snapshots:
 
   tinyglobby@0.2.17:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.5)
-      picomatch: 4.0.5
+      fdir: 6.5.0(picomatch@4.0.7)
+      picomatch: 4.0.7
 
   ts-dedent@2.2.0: {}
 
@@ -5121,6 +5100,8 @@ snapshots:
 
   vscode-languageserver-types@3.17.5: {}
 
+  vscode-languageserver-types@3.18.5: {}
+
   vscode-languageserver@9.0.1:
     dependencies:
       vscode-languageserver-protocol: 3.17.5
@@ -5130,7 +5111,7 @@ snapshots:
       '@vscode/l10n': 0.0.11
       vscode-languageserver: 9.0.1
       vscode-languageserver-textdocument: 1.0.12
-      vscode-languageserver-types: 3.17.5
+      vscode-languageserver-types: 3.18.5
       vscode-markdown-languageservice: 0.5.0
       vscode-uri: 3.1.0
 
@@ -5177,11 +5158,7 @@ snapshots:
 
   ws@7.5.11: {}
 
-  ws@8.21.0: {}
-
-  ws@8.21.3: {}
-
-  ws@8.22.0: {}
+  ws@8.23.0: {}
 
   wsl-utils@1.0.1:
     dependencies:
