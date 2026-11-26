@@ -51,7 +51,8 @@ test('native application opens, edits, and saves a local file with the platform 
 	}
 	const { page, errors } = application;
 	await page.getByText('Native NPad editing', { exact: true }).waitFor();
-	await page.waitForFunction(() => document.title.includes('NPad'));
+	// The default native macOS title omits the application name.
+	await page.waitForFunction(expected => document.title.includes(expected), process.platform === 'darwin' ? 'native.txt' : 'NPad');
 	await page.locator('.monaco-editor:visible .view-lines').first().click({ position: { x: 10, y: 5 } });
 	const modifier = process.platform === 'darwin' ? 'Meta' : 'Control';
 	await page.keyboard.press(`${modifier}+a`);
