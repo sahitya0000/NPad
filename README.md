@@ -19,6 +19,8 @@
 
 Sometimes you just want to open a file, fix it, and close it. NPad keeps the parts of VS Code that make editing great, including the editor, multi-cursor, find and replace, syntax highlighting, and Markdown preview. It drops the IDE: no terminals, debuggers, extensions marketplace, accounts, telemetry, or AI.
 
+![NPad editing a TypeScript file with the file explorer, tabs, and multiple cursors](docs/images/hero.png)
+
 ## ✨ Highlights
 
 - ⚡ **Opens straight to typing.** You start in a blank tab, and opening a file replaces it.
@@ -31,6 +33,28 @@ Sometimes you just want to open a file, fix it, and close it. NPad keeps the par
 - 🔒 **Private by design.** No telemetry, sign-in, auto-updater, or network calls while you edit.
 
 See the full [feature guide](docs/FEATURES.md).
+
+## 📸 Take a tour
+
+**Preview Markdown as you write.** Mermaid diagrams, math, and tables render side by side with the source, fully offline.
+
+![Markdown source next to its live preview with a Mermaid flowchart, a math formula, and a table](docs/images/markdown-preview.png)
+
+**Compare two files in seconds.** See exactly what changed between versions, down to the character.
+
+![Side-by-side comparison of two JSON settings files with changed lines highlighted](docs/images/compare.png)
+
+**Catch typos in notes and docs.** Misspellings are underlined as you type. Press `Ctrl+.` to fix, ignore, or add the word.
+
+![Spelling suggestions for a misspelled word in a plain-text meeting notes file](docs/images/spell-check.png)
+
+**Reach for power tools when you need them.** Sort, trim, dedupe, redact, column-edit, bookmark, and highlight, all from the Edit menu.
+
+![The Edit menu open on a log file, showing Text Operations and Sort Lines submenus](docs/images/editing-tools.png)
+
+**Make it yours.** Switch between 12 built-in light and dark themes instantly.
+
+![The Solarized Light theme applied, with the color theme picker listing built-in themes](docs/images/themes.png)
 
 ## 📦 Download
 
