@@ -77,7 +77,14 @@ async function assertStyleSwatch(icon: Locator, style: number): Promise<void> {
 
 async function readMenubar(page: Page): Promise<string[]> {
 	const entries: string[] = [];
-	await page.getByRole('menuitem', { name: 'Help', exact: true }).waitFor();
+	await page.getByRole('menuitem', { name: 'Help', exact: true }).waitFor().catch(async error => {
+		const state = await page.evaluate(() => ({
+			window: [window.innerWidth, window.innerHeight, window.devicePixelRatio],
+			menubar: document.querySelector<HTMLElement>('.menubar')?.offsetWidth,
+			buttons: [...document.querySelectorAll<HTMLElement>('.menubar > .menubar-menu-button')].map(button => `${button.getAttribute('aria-label')}:${button.style.visibility || 'visible'}:${button.offsetWidth}`),
+		}));
+		throw new Error(`Help menu is not visible: ${JSON.stringify(state)}`, { cause: error });
+	});
 	const buttons = page.locator('.menubar > .menubar-menu-button');
 	for (const button of await buttons.all()) {
 		const title = (await button.innerText()).trim();
@@ -786,8 +793,8 @@ test('NPad compares two local files from different folders and an unsaved buffer
 	await setTimeout(150);
 	await compareTab.click();
 	await picker.fill(second);
-	await page.locator('.quick-input-list').getByText('modified.txt', { exact: true }).waitFor();
-	await page.keyboard.press('Enter');
+	// Click the filtered entry: Enter can accept a stale active item before filtering settles.
+	await page.locator('.quick-input-list').getByText('modified.txt', { exact: true }).click();
 	await diff.waitFor();
 	await diff.locator('.original .view-lines').getByText('unsaved', { exact: true }).waitFor();
 	await diff.locator('.modified .view-lines').getByText('beta', { exact: true }).waitFor();
@@ -1223,7 +1230,8 @@ test('packaged NPad has focused editing menus and working visibility and issue-r
 	await fs.writeFile(text, 'NPad menu check\n');
 	await fs.writeFile(markdown, '# NPad menu check\n');
 	await fs.mkdir(path.join(profile, 'user-data', 'User'), { recursive: true });
-	await fs.writeFile(path.join(profile, 'user-data', 'User', 'settings.json'), JSON.stringify({ 'window.dialogStyle': 'custom', 'workbench.colorTheme': 'Default Light Modern' }));
+	// The command center can push trailing menus into overflow on 1024 px CI displays.
+	await fs.writeFile(path.join(profile, 'user-data', 'User', 'settings.json'), JSON.stringify({ 'window.dialogStyle': 'custom', 'window.commandCenter': false, 'workbench.colorTheme': 'Default Light Modern' }));
 	const { page, errors } = await launchNPad(t, profile, [workspace, text]);
 	t.after(() => fs.rm(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 200 }));
 	await page.getByText('NPad menu check', { exact: true }).waitFor();

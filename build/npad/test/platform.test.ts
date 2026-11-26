@@ -66,7 +66,8 @@ test('Unix launchers preserve arguments and sandboxing and use the correct packa
 });
 
 test('Unix launchers work through symlinks in paths containing spaces', { skip: process.platform === 'win32' }, async t => {
-	const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'npad launcher '));
+	// Resolve symlinked temporary roots, such as /var on macOS, as esbuild does.
+	const directory = await fs.realpath(await fs.mkdtemp(path.join(os.tmpdir(), 'npad launcher ')));
 	t.after(() => fs.rm(directory, { recursive: true, force: true }));
 	for (const platform of ['linux', 'darwin'] as const) {
 		const target = getBuildTarget(platform, 'x64');
