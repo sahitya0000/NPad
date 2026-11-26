@@ -1,0 +1,19 @@
+.monaco-editor .npad-bookmark-line { border-left: 3px solid var(--vscode-editorInfo-foreground); margin-left: 3px; }
+.monaco-editor .npad-bookmark-glyph::before { content: '\25c6'; color: var(--vscode-editorInfo-foreground); }
+.monaco-editor .npad-highlight-1,
+.monaco-editor .npad-highlight-2,
+.monaco-editor .npad-highlight-3,
+.monaco-editor .npad-highlight-4,
+.monaco-editor .npad-highlight-5 { background: var(--npad-highlight-background); border-bottom: 2px solid var(--npad-highlight-border); }
+.codicon[class*="codicon-npad-highlight-style-"]::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	box-sizing: border-box;
+	background: var(--npad-highlight-background);
+	border: 2px solid var(--npad-highlight-border);
+	border-radius: 2px;
+}
+.codicon[class*="codicon-npad-highlight-style-"]::before { margin-right: 8px; vertical-align: middle; }
+.monaco-editor .npad-eol-marker { color: var(--vscode-editorWhitespace-foreground); font-style: italic; opacity: .8; }
