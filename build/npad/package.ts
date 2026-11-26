@@ -7,7 +7,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as os from 'node:os';
 import * as asar from 'asar';
-import rceditCallback from 'rcedit';
+import { rcedit } from 'rcedit';
 import { isBuiltin } from 'node:module';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -20,7 +20,6 @@ import packageJson from '../../package.json' with { type: 'json' };
 
 const root = path.resolve(import.meta.dirname, '../..');
 const executeFile = promisify(execFile);
-const rcedit = promisify(rceditCallback);
 
 interface PackageManifest {
 	name: string;
@@ -201,12 +200,13 @@ export async function packageNPad(packageDir = distributionDir): Promise<void> {
 		await fs.promises.rename(path.join(packageDir, 'electron.exe'), executable);
 		await rcedit(executable, {
 			icon: path.join(root, 'resources', 'npad', 'code.ico'),
+			// rcedit's typings call this InternalFilename, but the Windows resource key is InternalName.
 			'version-string': {
 				ProductName: 'NPad',
 				FileDescription: 'NPad',
 				InternalName: 'npad',
 				OriginalFilename: 'NPad.exe',
-			},
+			} as rcedit.VersionStringOptions,
 		});
 	} else {
 		await packageUnixDesktop(packageDir);
