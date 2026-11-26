@@ -18,6 +18,9 @@ updates:
       - dependency-name: source-map
       # Prerelease builds track the upstream editor; Dependabot proposes downgrades.
       - dependency-name: "@vscode/codicons"
+      # Only supplies CSS for math rendered by @vscode/markdown-editor's KaTeX 0.16; 0.18+ prefixes class names.
+      - dependency-name: katex
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

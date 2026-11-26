@@ -101,7 +101,8 @@ class UpdateLinksOnFileRenameHandler extends Disposable {
 		const externalGlob = config.get<string[]>(settingNames.include);
 		if (externalGlob) {
 			for (const glob of externalGlob) {
-				if (picomatch.isMatch(newUri.fsPath, glob)) {
+				// picomatch 4 no longer detects the platform, so treat backslashes in Windows paths as separators.
+				if (picomatch.isMatch(newUri.fsPath, glob, { windows: process.platform === 'win32' })) {
 					return true;
 				}
 			}
