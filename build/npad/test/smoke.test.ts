@@ -77,7 +77,14 @@ async function assertStyleSwatch(icon: Locator, style: number): Promise<void> {
 
 async function readMenubar(page: Page): Promise<string[]> {
 	const entries: string[] = [];
-	await page.getByRole('menuitem', { name: 'Help', exact: true }).waitFor();
+	await page.getByRole('menuitem', { name: 'Help', exact: true }).waitFor().catch(async error => {
+		const state = await page.evaluate(() => ({
+			window: [window.innerWidth, window.innerHeight, window.devicePixelRatio],
+			menubar: document.querySelector<HTMLElement>('.menubar')?.offsetWidth,
+			buttons: [...document.querySelectorAll<HTMLElement>('.menubar > .menubar-menu-button')].map(button => `${button.getAttribute('aria-label')}:${button.style.visibility || 'visible'}:${button.offsetWidth}`),
+		}));
+		throw new Error(`Help menu is not visible: ${JSON.stringify(state)}`, { cause: error });
+	});
 	const buttons = page.locator('.menubar > .menubar-menu-button');
 	for (const button of await buttons.all()) {
 		const title = (await button.innerText()).trim();
