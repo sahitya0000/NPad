@@ -5,7 +5,7 @@
 <h1 align="center">NPad</h1>
 
 <p align="center">
-  <strong>The editor you love, minus everything you didn't open it for.</strong><br>
+  <strong>Notepad simplicity. VS Code editing power.</strong><br>
   A fast, private, offline text editor built on the VS Code editing core.
 </p>
 
