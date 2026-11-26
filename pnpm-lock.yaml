@@ -269,8 +269,8 @@ importers:
         specifier: ^2.1.5
         version: 2.1.5
       open:
-        specifier: ^10.1.2
-        version: 10.1.2
+        specifier: ^11.0.4
+        version: 11.0.4
       playwright-core:
         specifier: 1.61.0-alpha-2026-06-04
         version: 1.61.0-alpha-2026-06-04
@@ -681,7 +681,7 @@ packages:
       react-dom: '>=16.8.0'
 
   '@floating-ui/react@0.27.19':
-    resolution: {integrity: sha1-2NXYlbfLl9rDcL+/VfPmMIeP3x8=}
+    resolution: {integrity: sha512-31B8h5mm8YxotlE7/AU/PhNAl8eWxAmjL/v2QOxroDNkTFLk3Uu82u63N3b6TXa4EGJeeZLVcd/9AlNlVqzeog==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -690,7 +690,7 @@ packages:
     resolution: {integrity: sha1-omngVeQOL0WHO66dGi/cy9MU6j8=}
 
   '@headlessui/react@2.2.10':
-    resolution: {integrity: sha1-rWkliry57+onpLN+BujJyv05ymM=}
+    resolution: {integrity: sha512-5pVLNK9wlpxTUTy9GpgbX/SdcRh+HBnPktjM2wbiLTH4p+2EPHBO1aoSryUCuKUIItdDWO9ITlhUL8UnUN/oIA==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -1196,7 +1196,7 @@ packages:
     resolution: {integrity: sha1-xI5dVq/xREQJ45+hZLC01FUqe3o=}
 
   '@typescript/typescript6@6.0.2':
-    resolution: {integrity: sha1-eeDkdJJWTIP4YCAT190Q1evFGow=}
+    resolution: {integrity: sha512-mbCddXd+jm7hfx7w2YU64/Av4/NqqeG3GoRZgxPcgoTxYjhrcfJRw9ULch71SS4G+Q3bOXFhRvPqjguN0Hyp5w==}
     hasBin: true
 
   '@upsetjs/venn.js@2.0.0':
@@ -1356,7 +1356,7 @@ packages:
     resolution: {integrity: sha512-HGzILM/WfT/iFQs58q5+sj7bn+MfYD2pvTwbd9U11Faup9G/ZVAdYNi/d5Mmw0NKKupEHOpiyx/Ld92NkiYTaw==}
 
   '@zenuml/core@3.50.1':
-    resolution: {integrity: sha1-8D+9ln+xvvtHyVt1Onihc+E2hVI=}
+    resolution: {integrity: sha512-Q18BXvIfhRuGw0JfO4e+pltG04Phhv2E7n35EWTNSZKKH/HEkyE4Sh7KERb9dqaOfjOdRdKvLG0YekjK3fcDXw==}
     engines: {node: '>=20'}
     hasBin: true
     peerDependencies:
@@ -1444,7 +1444,7 @@ packages:
     engines: {node: '>=6.14.2'}
 
   bundle-name@4.1.0:
-    resolution: {integrity: sha1-87lrNBYNZDGhnXaIE1r3z7h5eIk=}
+    resolution: {integrity: sha512-tjwM5exMg6BGRI+kNmTntNsvdZS1X8BFYS6tnJ2hdH0kVxM6/eVZ2xy+FqStSWvYmtfFMDLIxurorHwDKfDz5Q==}
     engines: {node: '>=18'}
 
   cacheable-lookup@5.0.4:
@@ -1544,12 +1544,12 @@ packages:
     engines: {node: '>=8.0.0'}
 
   cytoscape-cose-bilkent@4.1.0:
-    resolution: {integrity: sha1-di+hId+ZMP/rUaSV2HkXxXCsIJs=}
+    resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
     peerDependencies:
       cytoscape: ^3.2.0
 
   cytoscape-fcose@2.2.0:
-    resolution: {integrity: sha1-5Nb2SQ30+rWK6c6p5cOrjXRy9HE=}
+    resolution: {integrity: sha512-ki1/VuRIHFCzxWNrsshHYPs6L7TvLu3DL+TyIGEsRcvVERmxokbf5Gdk7mFxZnTdiGtnA4cfSmjZJMviqSuZrQ==}
     peerDependencies:
       cytoscape: ^3.2.0
 
@@ -1683,7 +1683,7 @@ packages:
     engines: {node: '>=12'}
 
   d3-transition@3.0.1:
-    resolution: {integrity: sha1-aGn93hRIhoB3/dWYkgDLYbKhZF8=}
+    resolution: {integrity: sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==}
     engines: {node: '>=12'}
     peerDependencies:
       d3-selection: 2 - 3
@@ -1734,11 +1734,11 @@ packages:
     engines: {node: '>=4.0.0'}
 
   default-browser-id@5.0.0:
-    resolution: {integrity: sha1-odmL+WDBUILYo/pp6DFQzMzDryY=}
+    resolution: {integrity: sha512-A6p/pu/6fyBcA1TRz/GqWYPViplrftcW2gZC9q79ngNCKAeR/X3gcEdXQHl4KNXV+3wgIJ1CPkJQ3IHM6lcsyA==}
     engines: {node: '>=18'}
 
-  default-browser@5.2.1:
-    resolution: {integrity: sha1-e3umEgT/PkJbVWhprm0+nZ8XEs8=}
+  default-browser@5.5.1:
+    resolution: {integrity: sha512-m1pAzaJgZ/gssEqlOhJkPJp8Xly7QyW6xcrkUa2KKcDeDSEMP7X8xipU3snUcfisTQx0w1AGae+9UtJSfVnXGw==}
     engines: {node: '>=18'}
 
   defer-to-connect@2.0.1:
@@ -1746,7 +1746,7 @@ packages:
     engines: {node: '>=10'}
 
   define-lazy-prop@3.0.0:
-    resolution: {integrity: sha1-27Ga37dG1/xtc0oGty9KANAhJV8=}
+    resolution: {integrity: sha512-N+MeXYoqr3pOgn8xfyRPREN7gHakLYjhsHhWGT3fWAiL4IkAt0iDw14QiiEm2bE30c5XX5q0FtAA3CK5f9/BUg==}
     engines: {node: '>=12'}
 
   define-properties@1.1.3:
@@ -1901,7 +1901,7 @@ packages:
     resolution: {integrity: sha1-1Hyp83yibkvTg3SnxQC1o4R1W2w=}
 
   fdir@6.5.0:
-    resolution: {integrity: sha1-7Sq5Z6MxreYvGNB32uGSaE1Q01A=}
+    resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       picomatch: ^3 || ^4
@@ -2071,7 +2071,7 @@ packages:
     engines: {node: '>=4'}
 
   is-docker@3.0.0:
-    resolution: {integrity: sha1-kAk6oxBid9inelkQ265xdH4VogA=}
+    resolution: {integrity: sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
 
@@ -2083,8 +2083,12 @@ packages:
     resolution: {integrity: sha1-ZPYeQsu7LuwgcanawLKLoeZdUIQ=}
     engines: {node: '>=0.10.0'}
 
+  is-in-ssh@1.0.0:
+    resolution: {integrity: sha512-jYa6Q9rH90kR1vKB6NM7qqd1mge3Fx4Dhw5TVlK1MUBqhEOuCagrEHMevNuCcbECmXZ0ThXkRm+Ymr51HwEPAw==}
+    engines: {node: '>=20'}
+
   is-inside-container@1.0.0:
-    resolution: {integrity: sha1-6B+6aZZi6zHb2vJnZqYdSBRxfqQ=}
+    resolution: {integrity: sha512-KIYLCCJghfHZxqjYBE7rEy0OBuTd5xCHS7tHVgvCLkx7StIoaxwNW3hCALgEUjFfeRk+MG/Qxmp/vtETEF3tRA==}
     engines: {node: '>=14.16'}
     hasBin: true
 
@@ -2092,7 +2096,7 @@ packages:
     resolution: {integrity: sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=}
 
   is-wsl@3.1.0:
-    resolution: {integrity: sha1-4cZX45wQCQr8vt7GFyD2uSTDy9I=}
+    resolution: {integrity: sha512-UcVfVfaK4Sc4m7X3dUSoHoozQGBEFeDC+zVo06t98xe8CzHSZZBekNXH+tu0NalHolcJ/QAGqS46Hef7QXBIMw==}
     engines: {node: '>=16'}
 
   isexe@4.0.0:
@@ -2100,7 +2104,7 @@ packages:
     engines: {node: '>=20'}
 
   jotai@2.20.0:
-    resolution: {integrity: sha1-DjQi9vcUF1joIS1yM4+c8771/UU=}
+    resolution: {integrity: sha512-b5GAqgmXmXzB4WPaTH26ppk9Sl7AA9WSQX7yfdM+gJ1rFROiWcVbi97gFuN/yVCojOcbcvop2sfLL+fjxW0JVg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@babel/core': '>=7.0.0'
@@ -2418,9 +2422,9 @@ packages:
   once@1.4.0:
     resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
 
-  open@10.1.2:
-    resolution: {integrity: sha1-1d9AmEdVyanDyT34FWoSRn6IKSU=}
-    engines: {node: '>=18'}
+  open@11.0.4:
+    resolution: {integrity: sha512-++Zlftm0kVLPmzC06t6epuWmcRMDbI4z5P3NNX979WA/k23+NtSOynEGzsVfZwguKw2mi5umVgnBlJQMwRz4Pg==}
+    engines: {node: '>=20'}
 
   p-cancelable@2.1.1:
     resolution: {integrity: sha1-qrf71BZYL6MqPbSYWcEiSHxe0s8=}
@@ -2466,6 +2470,10 @@ packages:
 
   points-on-path@0.2.1:
     resolution: {integrity: sha1-VTICtUJMU77TcTWzGIWOrP+F3VI=}
+
+  powershell-utils@0.2.1:
+    resolution: {integrity: sha512-C+y9x90UElAddDZmV4qOx9W53B61PO7cIqWz2dQsWlwswuq4mr8NEwytdGKboYbQlGZ3awrkTeNvcZiZNHnQ8A==}
+    engines: {node: '>=20'}
 
   prebuild-install@7.1.2:
     resolution: {integrity: sha1-pf2ZhvWmJR+8R+Hlxl3nHmjAoFY=}
@@ -2514,7 +2522,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
   react-dom@19.2.6:
-    resolution: {integrity: sha1-RKgbC8yiLagUwAhH0J0ByGFVKbc=}
+    resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
     peerDependencies:
       react: ^19.2.6
 
@@ -2548,7 +2556,7 @@ packages:
     resolution: {integrity: sha1-EFn0ml4MgN7lQaAFsgzDIrIiFYs=}
 
   run-applescript@7.1.0:
-    resolution: {integrity: sha1-Lp5UxGZOwxBsW1Yw4knT1llcSRE=}
+    resolution: {integrity: sha512-DPe5pVFaAsinSaV6QjQ6gdiedWDcRCbUuiQfQa2wmWV7+xC9bGulGI8+TdRmoFkAPaBXk8CrAbnlY2ISniJ47Q==}
     engines: {node: '>=18'}
 
   rw@1.3.3:
@@ -2693,7 +2701,7 @@ packages:
     resolution: {integrity: sha1-qX7nqf9CaRufeD/xvFES/j/KkIA=}
 
   typescript@6.0.3:
-    resolution: {integrity: sha1-kCUdwAeRbpcnhsuU100VsYVXfSE=}
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2855,6 +2863,10 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+
+  wsl-utils@1.0.1:
+    resolution: {integrity: sha512-c16PKLIRxBYpR3jSWsdS7SFp0COm5SOQdiFjY818dYFHJbMGuLBszpF07LBWmOS1uzrHa9VGdynsEgoeKy0oOQ==}
+    engines: {node: '>=20'}
 
   yaeti@0.0.6:
     resolution: {integrity: sha1-8m9ITXJoTPQr7ft2lwqhYI+/lXc=}
@@ -4182,7 +4194,7 @@ snapshots:
 
   default-browser-id@5.0.0: {}
 
-  default-browser@5.2.1:
+  default-browser@5.5.1:
     dependencies:
       bundle-name: 4.1.0
       default-browser-id: 5.0.0
@@ -4569,6 +4581,8 @@ snapshots:
   is-glob@4.0.3:
     dependencies:
       is-extglob: 2.1.1
+
+  is-in-ssh@1.0.0: {}
 
   is-inside-container@1.0.0:
     dependencies:
@@ -5004,12 +5018,14 @@ snapshots:
     dependencies:
       wrappy: 1.0.2
 
-  open@10.1.2:
+  open@11.0.4:
     dependencies:
-      default-browser: 5.2.1
+      default-browser: 5.5.1
       define-lazy-prop: 3.0.0
+      is-in-ssh: 1.0.0
       is-inside-container: 1.0.0
-      is-wsl: 3.1.0
+      powershell-utils: 0.2.1
+      wsl-utils: 1.0.1
 
   p-cancelable@2.1.1: {}
 
@@ -5043,6 +5059,8 @@ snapshots:
     dependencies:
       path-data-parser: 0.1.0
       points-on-curve: 0.2.0
+
+  powershell-utils@0.2.1: {}
 
   prebuild-install@7.1.2:
     dependencies:
@@ -5398,6 +5416,11 @@ snapshots:
   ws@8.21.3: {}
 
   ws@8.22.0: {}
+
+  wsl-utils@1.0.1:
+    dependencies:
+      is-wsl: 3.1.0
+      powershell-utils: 0.2.1
 
   yaeti@0.0.6: {}
 
