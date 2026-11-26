@@ -248,8 +248,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.2
       https-proxy-agent:
-        specifier: ^7.0.2
-        version: 7.0.6
+        specifier: ^9.1.0
+        version: 9.1.0(kerberos@2.1.1)
       jschardet:
         specifier: 3.1.4
         version: 3.1.4
@@ -681,7 +681,7 @@ packages:
       react-dom: '>=16.8.0'
 
   '@floating-ui/react@0.27.19':
-    resolution: {integrity: sha1-2NXYlbfLl9rDcL+/VfPmMIeP3x8=}
+    resolution: {integrity: sha512-31B8h5mm8YxotlE7/AU/PhNAl8eWxAmjL/v2QOxroDNkTFLk3Uu82u63N3b6TXa4EGJeeZLVcd/9AlNlVqzeog==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -690,7 +690,7 @@ packages:
     resolution: {integrity: sha1-omngVeQOL0WHO66dGi/cy9MU6j8=}
 
   '@headlessui/react@2.2.10':
-    resolution: {integrity: sha1-rWkliry57+onpLN+BujJyv05ymM=}
+    resolution: {integrity: sha512-5pVLNK9wlpxTUTy9GpgbX/SdcRh+HBnPktjM2wbiLTH4p+2EPHBO1aoSryUCuKUIItdDWO9ITlhUL8UnUN/oIA==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -1196,7 +1196,7 @@ packages:
     resolution: {integrity: sha1-xI5dVq/xREQJ45+hZLC01FUqe3o=}
 
   '@typescript/typescript6@6.0.2':
-    resolution: {integrity: sha1-eeDkdJJWTIP4YCAT190Q1evFGow=}
+    resolution: {integrity: sha512-mbCddXd+jm7hfx7w2YU64/Av4/NqqeG3GoRZgxPcgoTxYjhrcfJRw9ULch71SS4G+Q3bOXFhRvPqjguN0Hyp5w==}
     hasBin: true
 
   '@upsetjs/venn.js@2.0.0':
@@ -1314,7 +1314,7 @@ packages:
     engines: {node: '>=22'}
 
   '@vscode/proxy-agent@0.45.0':
-    resolution: {integrity: sha1-1HmlzxTX646+iwTartU6Ish90lE=}
+    resolution: {integrity: sha512-rSR81pniNECvd3Zr1sq0VqYL7H+02dT723sEexpoweWi9mMklwLoapHTkwK6nAtxhjXNagRkT7l2GWuripXD7Q==}
     engines: {node: '>=22.15.0'}
 
   '@vscode/ripgrep-universal@1.18.0':
@@ -1356,7 +1356,7 @@ packages:
     resolution: {integrity: sha512-HGzILM/WfT/iFQs58q5+sj7bn+MfYD2pvTwbd9U11Faup9G/ZVAdYNi/d5Mmw0NKKupEHOpiyx/Ld92NkiYTaw==}
 
   '@zenuml/core@3.50.1':
-    resolution: {integrity: sha1-8D+9ln+xvvtHyVt1Onihc+E2hVI=}
+    resolution: {integrity: sha512-Q18BXvIfhRuGw0JfO4e+pltG04Phhv2E7n35EWTNSZKKH/HEkyE4Sh7KERb9dqaOfjOdRdKvLG0YekjK3fcDXw==}
     engines: {node: '>=20'}
     hasBin: true
     peerDependencies:
@@ -1382,6 +1382,10 @@ packages:
     resolution: {integrity: sha1-48121MVI7oldPD/Y3B9sW5Ay56g=}
     engines: {node: '>= 14'}
 
+  agent-base@9.0.0:
+    resolution: {integrity: sha512-TQf59BsZnytt8GdJKLPfUZ54g/iaUL2OWDSFCCvMOhsHduDQxO8xC4PNeyIkVcA5KwL2phPSv0douC0fgWzmnA==}
+    engines: {node: '>= 20'}
+
   antlr4@4.11.0:
     resolution: {integrity: sha1-10ZvUET6bjM8DsghswxhV/awBK4=}
     engines: {node: '>=14'}
@@ -1406,7 +1410,7 @@ packages:
     resolution: {integrity: sha1-K4gBjMjCjgYWeuHN/wJQTx+WiNM=}
 
   axios@1.20.0:
-    resolution: {integrity: sha1-UVUTRFqmDnHQS2UhymIQgpzLR4Y=}
+    resolution: {integrity: sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha1-6D46fj8wCzTLnYf2FfoMvzV2kO4=}
@@ -1544,12 +1548,12 @@ packages:
     engines: {node: '>=8.0.0'}
 
   cytoscape-cose-bilkent@4.1.0:
-    resolution: {integrity: sha1-di+hId+ZMP/rUaSV2HkXxXCsIJs=}
+    resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
     peerDependencies:
       cytoscape: ^3.2.0
 
   cytoscape-fcose@2.2.0:
-    resolution: {integrity: sha1-5Nb2SQ30+rWK6c6p5cOrjXRy9HE=}
+    resolution: {integrity: sha512-ki1/VuRIHFCzxWNrsshHYPs6L7TvLu3DL+TyIGEsRcvVERmxokbf5Gdk7mFxZnTdiGtnA4cfSmjZJMviqSuZrQ==}
     peerDependencies:
       cytoscape: ^3.2.0
 
@@ -1683,7 +1687,7 @@ packages:
     engines: {node: '>=12'}
 
   d3-transition@3.0.1:
-    resolution: {integrity: sha1-aGn93hRIhoB3/dWYkgDLYbKhZF8=}
+    resolution: {integrity: sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==}
     engines: {node: '>=12'}
     peerDependencies:
       d3-selection: 2 - 3
@@ -1714,7 +1718,7 @@ packages:
         optional: true
 
   debug@4.4.3:
-    resolution: {integrity: sha1-xq5DLZvZZiWC/OCHCbA4xY6ePWo=}
+    resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -1901,7 +1905,7 @@ packages:
     resolution: {integrity: sha1-1Hyp83yibkvTg3SnxQC1o4R1W2w=}
 
   fdir@6.5.0:
-    resolution: {integrity: sha1-7Sq5Z6MxreYvGNB32uGSaE1Q01A=}
+    resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       picomatch: ^3 || ^4
@@ -2033,6 +2037,10 @@ packages:
     resolution: {integrity: sha1-2o3+rH2hMLBcK6S1nJts1mYRprk=}
     engines: {node: '>= 14'}
 
+  https-proxy-agent@9.1.0:
+    resolution: {integrity: sha512-ag87y7cJJ9/3+GxFr8Oy4O5faDsGRGnBGsJj/YjOSsSx/5eadKLYTMPlzuR6obgoCDDm0abAAZitXXQkMOPSpA==}
+    engines: {node: '>= 20'}
+
   iconv-lite@0.6.3:
     resolution: {integrity: sha1-pS+AvzjaGVLrXGgXkHGYcaGnJQE=}
     engines: {node: '>=0.10.0'}
@@ -2100,7 +2108,7 @@ packages:
     engines: {node: '>=20'}
 
   jotai@2.20.0:
-    resolution: {integrity: sha1-DjQi9vcUF1joIS1yM4+c8771/UU=}
+    resolution: {integrity: sha512-b5GAqgmXmXzB4WPaTH26ppk9Sl7AA9WSQX7yfdM+gJ1rFROiWcVbi97gFuN/yVCojOcbcvop2sfLL+fjxW0JVg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@babel/core': '>=7.0.0'
@@ -2481,6 +2489,15 @@ packages:
     resolution: {integrity: sha1-foz42PW48jnBvGi+tOt4Vn1XLvg=}
     engines: {node: '>=0.4.0'}
 
+  proxy-agent-negotiate@1.1.0:
+    resolution: {integrity: sha512-N8IBcM3UgCVzz2L2Lqv8DVntDnnC8/hiV4nEDUPkqq72TPUgYWjQc+bdZlBPZK9LzPAvOY//gAt0S0DApoOXWQ==}
+    engines: {node: '>= 20'}
+    peerDependencies:
+      kerberos: ^2.0.0
+    peerDependenciesMeta:
+      kerberos:
+        optional: true
+
   proxy-from-env@2.1.0:
     resolution: {integrity: sha1-p0h1aK2tV3z6qn6IxJyrOrMIGro=}
     engines: {node: '>=10'}
@@ -2514,7 +2531,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
   react-dom@19.2.6:
-    resolution: {integrity: sha1-RKgbC8yiLagUwAhH0J0ByGFVKbc=}
+    resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
     peerDependencies:
       react: ^19.2.6
 
@@ -2693,7 +2710,7 @@ packages:
     resolution: {integrity: sha1-qX7nqf9CaRufeD/xvFES/j/KkIA=}
 
   typescript@6.0.3:
-    resolution: {integrity: sha1-kCUdwAeRbpcnhsuU100VsYVXfSE=}
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3797,6 +3814,8 @@ snapshots:
 
   agent-base@7.1.4: {}
 
+  agent-base@9.0.0: {}
+
   antlr4@4.11.0: {}
 
   argparse@2.0.1: {}
@@ -4537,6 +4556,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  https-proxy-agent@9.1.0(kerberos@2.1.1):
+    dependencies:
+      agent-base: 9.0.0
+      debug: 4.4.3
+      proxy-agent-negotiate: 1.1.0(kerberos@2.1.1)
+    transitivePeerDependencies:
+      - kerberos
+      - supports-color
+
   iconv-lite@0.6.3:
     dependencies:
       safer-buffer: 2.1.2
@@ -5062,6 +5090,10 @@ snapshots:
   proc-log@7.0.0: {}
 
   progress@2.0.3: {}
+
+  proxy-agent-negotiate@1.1.0(kerberos@2.1.1):
+    optionalDependencies:
+      kerberos: 2.1.1
 
   proxy-from-env@2.1.0: {}
 
