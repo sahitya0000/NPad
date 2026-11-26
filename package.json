@@ -83,19 +83,19 @@
 		"yazl": "^2.4.3"
 	},
 	"devDependencies": {
-		"@electron/get": "^2.0.0",
-		"@types/node": "24.x",
+		"@electron/get": "^5.1.0",
+		"@types/node": "26.x",
 		"@types/nspell": "^2.1.6",
 		"@types/svgo": "2.6.4",
-		"@vscode/codicons": "^0.0.46-49",
-		"asar": "^3.0.3",
-		"esbuild": "0.27.2",
+		"@vscode/codicons": "^0.0.45",
+		"asar": "^3.2.0",
+		"esbuild": "0.28.2",
 		"extract-zip": "^2.0.1",
 		"innosetup": "^6.4.1",
 		"node-gyp": "^13.1.0",
-		"rcedit": "^1.1.0",
-		"source-map": "0.6.1",
-		"svgo": "2.8.4",
+		"rcedit": "^5.0.2",
+		"source-map": "0.8.0",
+		"svgo": "4.1.0",
 		"typescript": "npm:@typescript/typescript6@^6.0.2"
 	},
 	"optionalDependencies": {
