@@ -251,7 +251,8 @@ suite('NPad edition bundle', () => {
 	});
 
 	test('filters bare imports only, retaining named dependencies and unaudited consumers', async t => {
-		const srcDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'npad-'));
+		// esbuild reports real paths, so resolve symlinked temporary roots such as /var on macOS.
+		const srcDir = await fs.promises.realpath(await fs.promises.mkdtemp(path.join(os.tmpdir(), 'npad-')));
 		t.after(() => fs.promises.rm(srcDir, { recursive: true, force: true }));
 		const files = {
 			'vs/workbench/workbench.common.main.ts': [
