@@ -371,8 +371,8 @@ importers:
         specifier: ^11.8.0
         version: 11.8.0
       katex:
-        specifier: ^0.16.33
-        version: 0.16.47
+        specifier: ^0.19.1
+        version: 0.19.1
       markdown-it:
         specifier: ^14.2.0
         version: 14.3.2
@@ -678,7 +678,7 @@ packages:
       react-dom: '>=16.8.0'
 
   '@floating-ui/react@0.27.19':
-    resolution: {integrity: sha1-2NXYlbfLl9rDcL+/VfPmMIeP3x8=}
+    resolution: {integrity: sha512-31B8h5mm8YxotlE7/AU/PhNAl8eWxAmjL/v2QOxroDNkTFLk3Uu82u63N3b6TXa4EGJeeZLVcd/9AlNlVqzeog==}
     peerDependencies:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
@@ -687,7 +687,7 @@ packages:
     resolution: {integrity: sha1-omngVeQOL0WHO66dGi/cy9MU6j8=}
 
   '@headlessui/react@2.2.10':
-    resolution: {integrity: sha1-rWkliry57+onpLN+BujJyv05ymM=}
+    resolution: {integrity: sha512-5pVLNK9wlpxTUTy9GpgbX/SdcRh+HBnPktjM2wbiLTH4p+2EPHBO1aoSryUCuKUIItdDWO9ITlhUL8UnUN/oIA==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -1159,7 +1159,7 @@ packages:
     resolution: {integrity: sha1-xI5dVq/xREQJ45+hZLC01FUqe3o=}
 
   '@typescript/typescript6@6.0.2':
-    resolution: {integrity: sha1-eeDkdJJWTIP4YCAT190Q1evFGow=}
+    resolution: {integrity: sha512-mbCddXd+jm7hfx7w2YU64/Av4/NqqeG3GoRZgxPcgoTxYjhrcfJRw9ULch71SS4G+Q3bOXFhRvPqjguN0Hyp5w==}
     hasBin: true
 
   '@upsetjs/venn.js@2.0.0':
@@ -1210,10 +1210,10 @@ packages:
     resolution: {integrity: sha512-m2mkimOsOgHPMjxNKH1Hf4Q2jz+b9jGqS0nTmCEYZT0bhb13Na5t/wQWABjQMZ6+DkB4pdSBdNvW4hYLKo0lfw==}
 
   '@vscode/markdown-it-katex@1.1.1':
-    resolution: {integrity: sha1-hbiE35i5o3cWhFFmDPler55wqu4=}
+    resolution: {integrity: sha512-3KTlbsRBPJQLE2YmLL7K6nunTlU+W9T5+FjfNdWuIUKgxSS6HWLQHaO3L4MkJi7z7MpIPpY+g4N+cWNBPE/MSA==}
 
   '@vscode/markdown-it-katex@1.1.2':
-    resolution: {integrity: sha1-bsNVxeyC0BnxOlEeI2NSU4TJEVU=}
+    resolution: {integrity: sha512-+4IIv5PgrmhKvW/3LpkpkGg257OViEhXkOOgCyj5KMsjsOfnRXkni8XAuuF9Ui5p3B8WnUovlDXAQNb8RJ/RaQ==}
 
   '@vscode/observables@0.1.1-0':
     resolution: {integrity: sha1-0/A0HEbIOVxMtR97dzHmlNYL9Bg=}
@@ -1319,7 +1319,7 @@ packages:
     resolution: {integrity: sha512-HGzILM/WfT/iFQs58q5+sj7bn+MfYD2pvTwbd9U11Faup9G/ZVAdYNi/d5Mmw0NKKupEHOpiyx/Ld92NkiYTaw==}
 
   '@zenuml/core@3.50.1':
-    resolution: {integrity: sha1-8D+9ln+xvvtHyVt1Onihc+E2hVI=}
+    resolution: {integrity: sha512-Q18BXvIfhRuGw0JfO4e+pltG04Phhv2E7n35EWTNSZKKH/HEkyE4Sh7KERb9dqaOfjOdRdKvLG0YekjK3fcDXw==}
     engines: {node: '>=20'}
     hasBin: true
     peerDependencies:
@@ -1454,6 +1454,10 @@ packages:
     resolution: {integrity: sha1-Yv3OdgBqaOXBqzMU3JLoAOuD2QY=}
     engines: {node: '>=16'}
 
+  commander@15.1.0:
+    resolution: {integrity: sha512-cgnQ88TRrWcC7pVq46RzJVRMktu3W2RcbnoidnfBsl1bmDCBwJS/udcIZpKoCrbAYYaCqsz1yZCVIgbIaU3ddQ==}
+    engines: {node: '>=22.12.0'}
+
   commander@2.11.0:
     resolution: {integrity: sha1-FXFS/R56bI2YpbcVzzdt+SgARWM=}
 
@@ -1516,12 +1520,12 @@ packages:
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
 
   cytoscape-cose-bilkent@4.1.0:
-    resolution: {integrity: sha1-di+hId+ZMP/rUaSV2HkXxXCsIJs=}
+    resolution: {integrity: sha512-wgQlVIUJF13Quxiv5e1gstZ08rnZj2XaLHGoFMYXz7SkNfCDOOteKBE6SYRfA9WxxI/iBc3ajfDoc6hb/MRAHQ==}
     peerDependencies:
       cytoscape: ^3.2.0
 
   cytoscape-fcose@2.2.0:
-    resolution: {integrity: sha1-5Nb2SQ30+rWK6c6p5cOrjXRy9HE=}
+    resolution: {integrity: sha512-ki1/VuRIHFCzxWNrsshHYPs6L7TvLu3DL+TyIGEsRcvVERmxokbf5Gdk7mFxZnTdiGtnA4cfSmjZJMviqSuZrQ==}
     peerDependencies:
       cytoscape: ^3.2.0
 
@@ -1655,7 +1659,7 @@ packages:
     engines: {node: '>=12'}
 
   d3-transition@3.0.1:
-    resolution: {integrity: sha1-aGn93hRIhoB3/dWYkgDLYbKhZF8=}
+    resolution: {integrity: sha512-ApKvfjsSR6tg06xrL434C0WydLr7JewBB3V+/39RMHsaXTOG0zmt/OAXeng5M5LBm0ojmxJrpomQVZ1aPvBL4w==}
     engines: {node: '>=12'}
     peerDependencies:
       d3-selection: 2 - 3
@@ -1849,7 +1853,7 @@ packages:
     resolution: {integrity: sha1-1Hyp83yibkvTg3SnxQC1o4R1W2w=}
 
   fdir@6.5.0:
-    resolution: {integrity: sha1-7Sq5Z6MxreYvGNB32uGSaE1Q01A=}
+    resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       picomatch: ^3 || ^4
@@ -2045,7 +2049,7 @@ packages:
     engines: {node: '>=20'}
 
   jotai@2.20.0:
-    resolution: {integrity: sha1-DjQi9vcUF1joIS1yM4+c8771/UU=}
+    resolution: {integrity: sha512-b5GAqgmXmXzB4WPaTH26ppk9Sl7AA9WSQX7yfdM+gJ1rFROiWcVbi97gFuN/yVCojOcbcvop2sfLL+fjxW0JVg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@babel/core': '>=7.0.0'
@@ -2083,6 +2087,10 @@ packages:
 
   katex@0.16.47:
     resolution: {integrity: sha1-ChOkLC3rT3TmHxYtRAuRZaVIAw8=}
+    hasBin: true
+
+  katex@0.19.1:
+    resolution: {integrity: sha512-jG8uKntjSEcm2EpQOh0XturpPuuC9r3Sq5HLHdsFdWZT27E672SF19QEi+of0/YeOy15lDgRhKvr5614uRrEfA==}
     hasBin: true
 
   kerberos@2.1.1:
@@ -2139,7 +2147,7 @@ packages:
     resolution: {integrity: sha1-gGduwEMwJd0+F+6YPQ/o3loiN+A=}
 
   mermaid@11.17.2:
-    resolution: {integrity: sha1-48rzcXWCwOROXQTP8EPgJcrsfLo=}
+    resolution: {integrity: sha512-V6K3C8EBdEsPFZXSKMJe6ppQOENxuHARr9GvHX4hh47lAbhMRD9qf4oEK7LoaRQxULMa80/qt5gHO73aCleBBg==}
 
   micromark-core-commonmark@2.0.3:
     resolution: {integrity: sha1-xpFjDkhQIaaM8o28Kyyifr9njNQ=}
@@ -2169,7 +2177,7 @@ packages:
     resolution: {integrity: sha1-PhM3arld16XP0OKVYN/pmWV7PFs=}
 
   micromark-extension-math@3.1.0:
-    resolution: {integrity: sha1-xC7jsd1amgNYToPdjwjj3lECEsE=}
+    resolution: {integrity: sha512-lvEqd+fHjATVs+2v/8kg9i5Q0AP2k85H0WUOwpIVvUML8BapsMvh1XAogmQjOCsLpoKRCVQqEkQBB3NhVBcsOg==}
 
   micromark-factory-destination@2.0.1:
     resolution: {integrity: sha1-j++OD3CB8EdPvdkt61DJkKAmRjk=}
@@ -2440,7 +2448,7 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
 
   react-dom@19.2.6:
-    resolution: {integrity: sha1-RKgbC8yiLagUwAhH0J0ByGFVKbc=}
+    resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
     peerDependencies:
       react: ^19.2.6
 
@@ -2594,7 +2602,7 @@ packages:
     resolution: {integrity: sha1-qX7nqf9CaRufeD/xvFES/j/KkIA=}
 
   typescript@6.0.3:
-    resolution: {integrity: sha1-kCUdwAeRbpcnhsuU100VsYVXfSE=}
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3782,6 +3790,8 @@ snapshots:
 
   commander@11.1.0: {}
 
+  commander@15.1.0: {}
+
   commander@2.11.0: {}
 
   commander@5.1.0: {}
@@ -4433,6 +4443,10 @@ snapshots:
   katex@0.16.47:
     dependencies:
       commander: 8.3.0
+
+  katex@0.19.1:
+    dependencies:
+      commander: 15.1.0
 
   kerberos@2.1.1:
     dependencies:
