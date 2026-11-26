@@ -1,0 +1,17 @@
+name: Feature request
+description: Propose a focused improvement within NPad's local-editor scope.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the editing workflow and current limitation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior and alternatives
+      description: Read the README scope first; NPad intentionally excludes full IDE and AI features.
+    validations:
+      required: true

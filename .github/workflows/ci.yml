@@ -1,0 +1,171 @@
+name: Native builds and tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  secrets:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Scan Git history for secrets
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = '8.30.1'
+          $archive = Join-Path $env:RUNNER_TEMP 'gitleaks.zip'
+          $destination = Join-Path $env:RUNNER_TEMP 'gitleaks'
+          Invoke-WebRequest "https://github.com/gitleaks/gitleaks/releases/download/v$version/gitleaks_${version}_windows_x64.zip" -OutFile $archive
+          $expected = 'd29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e'
+          if ((Get-FileHash $archive -Algorithm SHA256).Hash -ne $expected) {
+            throw 'Gitleaks archive checksum mismatch.'
+          }
+          Expand-Archive $archive -DestinationPath $destination
+          & "$destination\gitleaks.exe" git . --redact --log-opts='--all'
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+  windows:
+    runs-on: windows-2025
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.13'
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+      - name: Install MSVC Spectre libraries
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $installation = & $vswhere -latest -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
+          if (-not $installation) { throw 'Visual Studio C++ Build Tools are required.' }
+          $setup = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\setup.exe"
+          $arguments = "modify --installPath `"$installation`" --add Microsoft.VisualStudio.Component.VC.Runtimes.x86.x64.Spectre --quiet --norestart --nocache"
+          $process = Start-Process $setup -ArgumentList $arguments -Wait -PassThru
+          if ($process.ExitCode -notin @(0, 3010)) {
+            throw "Visual Studio component installation failed: $($process.ExitCode)"
+          }
+      - name: Restore dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build application and installer
+        run: pnpm run build-npad
+      - name: Check types and unit tests
+        run: pnpm run check
+      - name: Test native runtime and basic editing
+        run: pnpm run test-native-app
+      - name: Test packaged application
+        run: pnpm run test-npad-app
+      - name: Generate installer checksum
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          $installer = ".build\npad\NPadSetup-x64-$version.exe"
+          $hash = (Get-FileHash $installer -Algorithm SHA256).Hash.ToLowerInvariant()
+          "$hash  $(Split-Path $installer -Leaf)" | Set-Content ".build\npad\SHA256SUMS.txt" -Encoding ascii
+      - name: Upload unsigned installer
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: NPad-windows-x64-unsigned
+          path: |
+            .build/npad/NPadSetup-x64-*.exe
+            .build/npad/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14
+
+  unix:
+    name: ${{ matrix.platform }}-${{ matrix.arch }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            platform: linux
+            arch: x64
+          - os: ubuntu-24.04-arm
+            platform: linux
+            arch: arm64
+          - os: macos-15-intel
+            platform: darwin
+            arch: x64
+          - os: macos-15
+            platform: darwin
+            arch: arm64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    env:
+      CC: ${{ matrix.platform == 'linux' && 'clang-19' || 'clang' }}
+      CXX: ${{ matrix.platform == 'linux' && 'clang++-19' || 'clang++' }}
+      NPAD_EXPECTED_TARGET: ${{ matrix.platform }}-${{ matrix.arch }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.13'
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+      - name: Verify native host architecture
+        run: |
+          node --input-type=module -e 'if (`${process.platform}-${process.arch}` !== process.env.NPAD_EXPECTED_TARGET) throw new Error("Runner does not match the requested native target");'
+      - name: Install Linux build and GUI prerequisites
+        if: matrix.platform == 'linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends clang-19 build-essential pkg-config libx11-dev libxkbfile-dev libsecret-1-dev libkrb5-dev libgtk-3-0t64 libnss3 libasound2t64 libgbm1 xvfb xauth dbus-x11
+      - name: Restore native dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Check build-tool types
+        run: pnpm run typecheck
+      - name: Build native application and archive
+        run: pnpm run build-npad
+      - name: Test Linux application with sandboxing enabled
+        if: matrix.platform == 'linux'
+        run: |
+          helper=".build/npad/linux-$(node -p process.arch)/chrome-sandbox"
+          sudo chown root:root "$helper"
+          sudo chmod 4755 "$helper"
+          export XDG_RUNTIME_DIR="$(mktemp -d "$RUNNER_TEMP/npad-runtime.XXXXXX")"
+          dbus-run-session -- xvfb-run -a pnpm run test-native-app
+      - name: Test macOS application
+        if: matrix.platform == 'darwin'
+        run: pnpm run test-native-app
+      - name: Run unit and packaging regressions
+        run: |
+          pnpm test
+          pnpm run test-docs
+      - name: Upload native archive and checksum
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: NPad-${{ matrix.platform }}-${{ matrix.arch }}-unsigned
+          path: .build/npad/NPad-${{ matrix.platform }}-${{ matrix.arch }}-*
+          if-no-files-found: error
+          retention-days: 14

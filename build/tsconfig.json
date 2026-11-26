@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "ES2024",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"strict": true,
+		"esModuleInterop": true,
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"types": ["node"]
+	},
+	"include": [
+		"npad/**/*.ts",
+		"next/test/npad.test.ts",
+		"lib/dependencies.ts",
+		"../src/typings/vscode-globals-nls.d.ts"
+	]
+}

@@ -1,0 +1,74 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+import path from 'path';
+import esbuild, { type Plugin } from 'esbuild';
+import { resolvePackageDirectory } from '../esbuild-common.mts';
+import { run } from '../esbuild-webview-common.mts';
+
+const rootDir = import.meta.dirname;
+const previewSrcDir = path.join(rootDir, 'preview-src');
+
+const cssTextPlugin: Plugin = {
+	name: 'css-text',
+	setup(build) {
+		build.onLoad({ filter: /diagramStyles\.css$/ }, async args => {
+			const result = await esbuild.build({
+				entryPoints: [args.path],
+				bundle: true,
+				minify: true,
+				write: false,
+				loader: {
+					'.ttf': 'dataurl',
+					'.woff': 'dataurl',
+					'.woff2': 'dataurl',
+				},
+			});
+			const css = result.outputFiles[0].text;
+			return {
+				contents: `export default ${JSON.stringify(css)};`,
+				loader: 'js',
+			};
+		});
+	},
+};
+
+const mermaidMarkdownBuildOptions: Partial<esbuild.BuildOptions> = {
+	loader: {
+		'.ttf': 'dataurl',
+	},
+	plugins: [cssTextPlugin],
+	splitting: true,
+};
+
+await Promise.all([
+	// The standalone diagram editor shares its implementation with the upstream chat preview.
+	run({
+		entryPoints: {
+			'index-editor': path.join(previewSrcDir, 'chat', 'index-editor.ts'),
+			'codicon': path.join(resolvePackageDirectory(rootDir, '@vscode/codicons'), 'dist', 'codicon.css'),
+		},
+		srcDir: previewSrcDir,
+		outdir: path.join(rootDir, 'chat-webview-out'),
+		additionalOptions: { loader: { '.ttf': 'dataurl' } },
+	}, process.argv),
+	// Markdown preview
+	run({
+		entryPoints: {
+			'index': path.join(previewSrcDir, 'markdown', 'index.ts'),
+		},
+		srcDir: previewSrcDir,
+		outdir: path.join(rootDir, 'markdown-preview-out'),
+		additionalOptions: mermaidMarkdownBuildOptions,
+	}, process.argv),
+	// Markdown editor code blocks
+	run({
+		entryPoints: {
+			'index': path.join(previewSrcDir, 'markdownEditor', 'index.ts'),
+		},
+		srcDir: previewSrcDir,
+		outdir: path.join(rootDir, 'markdown-editor-out'),
+		additionalOptions: mermaidMarkdownBuildOptions,
+	}, process.argv),
+]);

@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a reproducible NPad defect, not a private security issue.
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities, follow SECURITY.md. Do not attach private files or credentials."
+  - type: input
+    id: version
+    attributes:
+      label: NPad version or commit
+      description: Include whether this is a local build.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Windows version and architecture
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Use a minimal synthetic example, not personal documents.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Relevant diagnostics or screenshots
+      description: Remove secrets, user paths, and personal information.
