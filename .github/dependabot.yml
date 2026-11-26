@@ -8,6 +8,16 @@ updates:
     groups:
       development:
         dependency-type: development
+      one-ds:
+        patterns: ["@microsoft/1ds-*"]
+    ignore:
+      # Types must match the pinned Node 24 runtime; update with .nvmrc.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+      # 0.7+ makes SourceMapConsumer asynchronous; the bundler adjusts maps synchronously.
+      - dependency-name: source-map
+      # Prerelease builds track the upstream editor; Dependabot proposes downgrades.
+      - dependency-name: "@vscode/codicons"
   - package-ecosystem: github-actions
     directory: /
     schedule:
