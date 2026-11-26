@@ -48,7 +48,8 @@ export async function getProxyAgent(rawRequestURL: string, env: typeof process.e
 		const { default: mod } = await import('http-proxy-agent');
 		return new mod.HttpProxyAgent(proxyURL, opts);
 	} else {
-		const { default: mod } = await import('https-proxy-agent');
-		return new mod.HttpsProxyAgent(proxyURL, opts);
+		// https-proxy-agent 8+ is ESM-only and has no default export.
+		const { HttpsProxyAgent } = await import('https-proxy-agent');
+		return new HttpsProxyAgent(proxyURL, opts);
 	}
 }
