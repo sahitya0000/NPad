@@ -2000,7 +2000,7 @@
 		"dompurify": "^3.4.10",
 		"highlight.js": "^11.8.0",
 		"katex": "^0.16.33",
-		"markdown-it": "^14.2.0",
+		"markdown-it": "^14.3.3",
 		"morphdom": "^2.7.7",
 		"picomatch": "^4.0.7",
 		"vscode-languageclient": "^9.0.1",
