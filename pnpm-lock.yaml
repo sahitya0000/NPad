@@ -275,8 +275,8 @@ importers:
         specifier: 1.65.1
         version: 1.65.1
       undici:
-        specifier: ^7.28.0
-        version: 7.29.1
+        specifier: ^7.30.1
+        version: 7.30.1
       vscode-oniguruma:
         specifier: 1.7.0
         version: 1.7.0
@@ -500,7 +500,7 @@ packages:
     resolution: {integrity: sha1-6DoaJwTwxeSedZKyFAMaD0o01+U=}
 
   '@electron/get@5.1.0':
-    resolution: {integrity: sha1-+WyioOibJ0kP+Pe1o5K9TfaUKZg=}
+    resolution: {integrity: sha512-3kSBtG8ObcTVfXanm5vVJ6UnBLEVmVsRk1M+vGqCuMBV+XLCbJYuWQful+yIy0GQDsSlK0kHEriEHn7SPk4EnA==}
     engines: {node: '>=22.12.0'}
 
   '@esbuild/aix-ppc64@0.28.2':
@@ -1277,7 +1277,7 @@ packages:
     engines: {node: '>=22'}
 
   '@vscode/proxy-agent@0.45.0':
-    resolution: {integrity: sha1-1HmlzxTX646+iwTartU6Ish90lE=}
+    resolution: {integrity: sha512-rSR81pniNECvd3Zr1sq0VqYL7H+02dT723sEexpoweWi9mMklwLoapHTkwK6nAtxhjXNagRkT7l2GWuripXD7Q==}
     engines: {node: '>=22.15.0'}
 
   '@vscode/ripgrep-universal@1.18.0':
@@ -2607,8 +2607,8 @@ packages:
   undici-types@7.16.0:
     resolution: {integrity: sha1-/8zf82rqSITL/OmnUKBYAiT1ikY=}
 
-  undici@7.29.1:
-    resolution: {integrity: sha1-d0HG/Is+GkjjAyODNkK/voQUQ60=}
+  undici@7.30.1:
+    resolution: {integrity: sha512-03KrMbjIFDWQR5RNPrSw3bd1r12JpyFQl9/yxjUbJtqkjmllqC5lFjZh6ujeuJCKr8EOQvRW872Oy/az+nLYxg==}
     engines: {node: '>=20.18.1'}
 
   undici@8.12.3:
@@ -2788,7 +2788,7 @@ snapshots:
       semver: 7.8.5
       sumchecker: 3.0.1
     optionalDependencies:
-      undici: 7.29.1
+      undici: 7.30.1
     transitivePeerDependencies:
       - supports-color
 
@@ -3554,7 +3554,7 @@ snapshots:
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       socks-proxy-agent: 8.0.5
-      undici: 7.29.1
+      undici: 7.30.1
     optionalDependencies:
       '@vscode/windows-ca-certs': 0.3.4
     transitivePeerDependencies:
@@ -5059,7 +5059,7 @@ snapshots:
 
   undici-types@7.16.0: {}
 
-  undici@7.29.1: {}
+  undici@7.30.1: {}
 
   undici@8.12.3: {}
 
