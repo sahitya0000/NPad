@@ -12,17 +12,6 @@ Packaging includes only the runtime dependencies the app actually uses. It leave
 
 Gitleaks's first scan produced 30 findings. All of them were upstream strings that aren't secrets: public telemetry IDs, keyboard shortcuts, a protocol-example token, and a key-format regex. `.gitleaks.toml` allows only those exact strings in those exact files. A test API key was still detected after the exclusions, which confirms the default rules remain active. Automated scanning doesn't replace a human review of what gets published.
 
-## Before going public
-
-- [ ] Confirm you have the right to publish all code, assets (especially the NPad logo), and docs.
-- [ ] Review license obligations for the packaged dependencies, including grammars, themes, fonts, dictionaries, and native binaries.
-- [ ] Review the working tree for private or internal-only material, then rerun the secret scan on the final commit. Rotate any credential that was ever exposed; deleting it isn't enough.
-- [ ] Enable private vulnerability reporting, secret scanning with push protection, Dependabot alerts and security updates, and code scanning.
-- [ ] Choose a private contact for conduct reports and add it to [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md).
-- [ ] Run every CI job from a clean GitHub checkout. Installation from public npm hasn't been verified yet, because the preparation machine used a package mirror.
-- [ ] Protect `main`: require pull requests, reviews, and passing CI, and block force pushes and branch deletion.
-- [ ] Make the repository public. Don't promise support response times you can't meet.
-
 ## Releasing
 
 Releases are GitHub Releases with a `v<version>` tag, the platform packages, and one `SHA256SUMS.txt`. The examples below use `1.147.0`; replace it with the version you're releasing. Never commit installers, archives, or signing keys to Git. `/release/` is ignored.
