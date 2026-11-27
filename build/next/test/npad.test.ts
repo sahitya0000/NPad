@@ -135,11 +135,12 @@ suite('NPad edition bundle', () => {
 
 	test('keeps required product compatibility metadata while declaring an immutable NPad edition', () => {
 		const npad = createNPadProduct(product);
-		assert.deepStrictEqual({ isNPad: npad.isNPad, accountSchema: npad.defaultChatAgent, reportIssueUrl: npad.reportIssueUrl, originalIssueUrl: product.reportIssueUrl }, {
+		assert.deepStrictEqual({ isNPad: npad.isNPad, accountSchema: npad.defaultChatAgent, reportIssueUrl: npad.reportIssueUrl, originalIssueUrl: product.reportIssueUrl, licenseUrl: npad.licenseUrl }, {
 			isNPad: true,
 			accountSchema: product.defaultChatAgent,
 			reportIssueUrl: undefined,
 			originalIssueUrl: 'https://github.com/microsoft/vscode/issues/new',
+			licenseUrl: 'https://github.com/sahitya0000/NPad/blob/main/LICENSE',
 		});
 	});
 

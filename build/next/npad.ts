@@ -98,6 +98,7 @@ export function createNPadProduct<T extends object>(product: T): T & Partial<IPr
 		builtInExtensions: [],
 		extensionsGallery: undefined,
 		reportIssueUrl: undefined,
+		licenseUrl: 'https://github.com/sahitya0000/NPad/blob/main/LICENSE',
 		mcpGallery: undefined,
 		extensionRecommendations: undefined,
 		remoteExtensionTips: undefined,
