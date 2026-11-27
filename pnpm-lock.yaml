@@ -1988,8 +1988,8 @@ packages:
     resolution: {integrity: sha1-ZoXyN1XkPFJOJR0py8lySOMGEAk=}
     engines: {node: '>=12'}
 
-  ip-address@10.7.2:
-    resolution: {integrity: sha512-7H/2gFSIitxc0hG3nOI1glS8QLo/EHBFFLk8vEUjXY/xu0AdL8jZ9U1IzO2PUm0d2D/ofQcAifb0g6OBkt8U7w==}
+  ip-address@10.7.6:
+    resolution: {integrity: sha512-00LYkM6byILa9eQIx6qoaXCM40xTLd56AZ4vyaPW3YTyb49VZYPo5xsiAq4tuQ54GH4R7gVdYScJ1B7B77PuTg==}
     engines: {node: '>= 12'}
 
   is-buffer@2.0.5:
@@ -2509,11 +2509,11 @@ packages:
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
 
   socks-proxy-agent@8.0.5:
-    resolution: {integrity: sha1-uc205+mYUJ12WdaJznaXrCFkW+4=}
+    resolution: {integrity: sha512-HehCEsotFqbPW9sJ8WVYB6UbmIMv7kUUORIF2Nncq4VQvBfNBLibW9YZR5dlYCSUhwcD628pRllm7n+E+YTzJw==}
     engines: {node: '>= 14'}
 
   socks@2.8.8:
-    resolution: {integrity: sha1-I7720CdI6shHrXVhDetsRyVUxno=}
+    resolution: {integrity: sha512-NlGELfPrgX2f1TAAcz0WawlLn+0r3FyhhCRpFFK2CemXenPYvzMWWZINv3eDNo9ucdwme7oCHRY0Jnbs4aIkog==}
     engines: {node: '>= 10.0.0', npm: '>= 3.0.0'}
 
   source-map-js@1.2.4:
@@ -4348,7 +4348,7 @@ snapshots:
 
   internmap@2.0.3: {}
 
-  ip-address@10.7.2: {}
+  ip-address@10.7.6: {}
 
   is-buffer@2.0.5: {}
 
@@ -4961,7 +4961,7 @@ snapshots:
 
   socks@2.8.8:
     dependencies:
-      ip-address: 10.7.2
+      ip-address: 10.7.6
       smart-buffer: 4.2.0
 
   source-map-js@1.2.4: {}
